@@ -1,4 +1,5 @@
 # Game flow - how game progresses
+from player.history import PlayerHistory
 
 from ai.random_ai import RandomAI
 from core.rules import choices, winner
@@ -11,11 +12,13 @@ def play_game():
     print("Welcome to Snake Water Gun game")
 
     ai = RandomAI()
+    history = PlayerHistory()
 
     player = player_choice()
     if player not in choices:
         print("Invalid choice")
         return
+    history.record_move(player)
 
     computer = ai.choose_move(choices)
 
