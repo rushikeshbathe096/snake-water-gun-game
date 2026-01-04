@@ -1,6 +1,7 @@
 # Game flow - how game progresses
 from player.history import PlayerHistory
 from analytics.stats import GameStats
+from analytics.plots import plot_moves, plot_results
 
 from ai.adaptive_ai import AdaptiveAI
 from core.rules import choices, winner
@@ -37,4 +38,8 @@ def play_game():
         print("Draw")
 
     stats.record_result(result)
+    summary = stats.get_summary()
+    plot_moves(summary["moves"])
+    plot_results(summary["results"])
+
 
