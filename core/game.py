@@ -1,5 +1,6 @@
 # Game flow - how game progresses
 from player.history import PlayerHistory
+from analytics.stats import GameStats
 
 from ai.adaptive_ai import AdaptiveAI
 from core.rules import choices, winner
@@ -12,6 +13,7 @@ def play_game():
     print("Welcome to Snake Water Gun game")
 
     history = PlayerHistory()
+    stats = GameStats()
     ai = AdaptiveAI(history)
 
     player = player_choice()
@@ -19,6 +21,7 @@ def play_game():
         print("Invalid choice")
         return
     history.record_move(player)
+    stats.record_move(player)
 
     computer = ai.choose_move(choices)
 
@@ -32,3 +35,6 @@ def play_game():
         print("You lose")
     else:
         print("Draw")
+
+    stats.record_result(result)
+
