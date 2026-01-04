@@ -1,7 +1,7 @@
 # Game flow - how game progresses
 from player.history import PlayerHistory
 
-from ai.random_ai import RandomAI
+from ai.adaptive_ai import AdaptiveAI
 from core.rules import choices, winner
 
 def player_choice():
@@ -11,8 +11,8 @@ def player_choice():
 def play_game():
     print("Welcome to Snake Water Gun game")
 
-    ai = RandomAI()
     history = PlayerHistory()
+    ai = AdaptiveAI(history)
 
     player = player_choice()
     if player not in choices:
