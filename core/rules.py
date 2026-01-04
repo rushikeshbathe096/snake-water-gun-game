@@ -1,3 +1,5 @@
+#Pure game logic for snake water gun game
+#who will win - player or computer
 choices=["snake" , "water" , "gun"]
 
 def winner(player,computer):

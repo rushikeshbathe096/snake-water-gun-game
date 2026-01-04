@@ -1,3 +1,4 @@
+#game flow - how game progresses
 import random
 
 from core.rules import choices, winner
