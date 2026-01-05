@@ -47,7 +47,7 @@ This approach avoids GUI dependencies and works well in WSL and server environme
 
 ### Requirements
 - Python 3.x
-- Linux / WSL recommended
+
 
 ### Install dependencies
 ```bash
